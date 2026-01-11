@@ -138,3 +138,17 @@ name {
 span.highlight {
   background-color: #ffffd0;
 }
+
+.conf-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  background-color: #1b5e20;
+}
+
+.conf-badge.kdd {
+  background-color: #1b5e20;
+}
