@@ -10,19 +10,31 @@
     <link rel="icon" type="image/png" href="figures/logo.jpg">
     <title>Jiaqi's Homepage</title>
     <style>
-    .conf-badge {
-      display: inline-block;
-      padding: 6px 16px;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 600;
-      border-radius: 999px;
-      background-color: #1b5e20;
-    }
-
-    .conf-badge.kdd {
-      background-color: #1b5e20;
-    }
+        .img-wrapper {
+          position: relative;   /* ⭐ 必须 */
+          width: 100%;
+          max-width: 260px;
+        }
+        
+        .img-wrapper img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 8px;
+          display: block;
+        }
+        
+        .img-badge {
+          position: absolute;   /* ⭐ 叠加 */
+          top: 12px;
+          left: 12px;
+          padding: 6px 14px;
+          background-color: #1b5e20;  /* TPAMI 绿 */
+          color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 999px;
+        }
   </style>
 </head>
 
@@ -35,9 +47,7 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
             <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <h2>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Jiaqi Zhang (张家祺)</h2>
-              </p>
+              <h2 style="text-align: center;">Jiaqi Zhang (张家祺)</h2>
               <p> Jiaqi is a 1st-year PhD student at The University of Queensland (UQ), under the supervision of Prof.<a href="https://sites.google.com/view/hongzhi-yin/home">Hongzhi Yin</a> and Prof.<a href="https://junliang-yu.github.io/">Junliang Yu</a>. 
                   His research interest lies in Large Language Models, Personalization, Recommender Systems, LLM Reasoning, and LLM Agent.
                   He did a research internship at Tsinghua University, working under the guidance of Prof.<a href="http://web.ee.tsinghua.edu.cn/liyong/zh_CN/index.htm">Yong Li</a> and Prof.<a href="https://fi.ee.tsinghua.edu.cn/~gaochen/">Chen Gao</a>.
@@ -122,24 +132,20 @@
       <td style="padding:20px;width:100%;vertical-align:middle">
     <h2>Selected Publications (<a href="https://scholar.google.com/citations?hl=zh-CN&user=6SjLgqQAAAAJ">Full Publications</a>)</h2> 
 
-    <table id="tbPublications" width="100%">
-      <tr>
-        <td width="16%" style="padding:10px; vertical-align: top;">
-          <img src="figures/NineRec.png" alt="paper image"; style="width:100%; max-width:260px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-        </td>
-        <td width="84%" style="padding:10px; vertical-align: top;">
-          <span class="conf-badge kdd">TPAMI'25</span>
-          <a href="https://ieeexplore.ieee.org/document/10461053">
-            <strong>NineRec: A Benchmark Dataset Suite for Evaluating Transferable Recommendation, </strong>
-          </a>
-          <br>
-          <strong>Jiaqi Zhang</strong>, Yu Cheng, Yongxin Ni, Yunzhu Pan, Zheng Yuan, Junchen Fu, Youhua Li, Jie Wang and Fajie Yuan
-          <br>
-          <em> IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI</strong>)</em>, 2025
-          [<a href="https://ieeexplore.ieee.org/document/10461053">Paper</a>]
-        </td>
-      </tr>
-    </table>
+    <table id="tbPublications" width="100%"><tr>
+    <td width="16%" style="padding:10px; vertical-align: top;">
+      <div class="img-wrapper">
+        <img src="figures/NineRec.png" alt="paper image" style="width:100%; max-width:260px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+        <div class="img-badge">TPAMI'25</div>
+      </div>
+    </td>
+    <td width="84%" style="padding:10px; vertical-align: top;">
+      <a href="https://ieeexplore.ieee.org/document/10461053"><strong>NineRec: A Benchmark Dataset Suite for Evaluating Transferable Recommendation</strong></a><br>
+      <strong>Jiaqi Zhang</strong>, Yu Cheng, Yongxin Ni, Yunzhu Pan, Zheng Yuan, Junchen Fu, Youhua Li, Jie Wang and Fajie Yuan<br>
+      <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI</strong>)</em>, 2025 [<a href="https://ieeexplore.ieee.org/document/10461053">Paper</a>]
+    </td>
+    </tr></table>
+
 
     <table id="tbPublications" width="100%">
       <tr>
