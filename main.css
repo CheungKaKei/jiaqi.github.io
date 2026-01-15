@@ -26,7 +26,7 @@ table {
   background-color: #ffffff;
 }
 
-a, a:link, a:visited {
+/* a, a:link, a:visited {
   color: #42b9e4;
   background: transparent;
   cursor: pointer;
@@ -38,6 +38,16 @@ a:hover {
   color: #527bbd;
   background: inherit;
   text-decoration: underline;
+} */
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
 }
 
 img {
