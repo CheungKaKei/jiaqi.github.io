@@ -464,7 +464,17 @@ images.forEach((img, index) => {
 function showImage() {
   const img = images[currentIndex];
   lightboxImg.src = img.src;
-  lightboxCaption.textContent = img.dataset.caption || '';
+
+  // 🔑 自动抓 caption
+  const container = img.closest('div'); // 外层包住 img + p 的 div
+  const ps = container.querySelectorAll('p');
+
+  let captionText = '';
+  ps.forEach(p => {
+    captionText += p.textContent.trim() + ' ';
+  });
+
+  lightboxCaption.textContent = captionText.trim();
 }
 
 document.getElementById('lightbox-close').onclick = () => {
