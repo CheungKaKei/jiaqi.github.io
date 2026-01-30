@@ -611,11 +611,65 @@ document.addEventListener('keydown', e => {
 //     document.getElementById('lightbox-prev').click();
 //   }
 // }
+// =================================================
+// let startX = 0;
+// let currentX = 0;
+// let isDragging = false;
+
+// const swipeThreshold = 80;
+
+// // touch start
+// lightboxImg.addEventListener('touchstart', e => {
+//   if (e.touches.length !== 1) return;
+
+//   startX = e.touches[0].clientX;
+//   currentX = startX;
+//   isDragging = true;
+
+//   lightboxImg.style.transition = 'none';
+// });
+
+// // touch move
+// lightboxImg.addEventListener('touchmove', e => {
+//   if (!isDragging) return;
+
+//   currentX = e.touches[0].clientX;
+//   const deltaX = currentX - startX;
+
+//   lightboxImg.style.transform = `translateX(${deltaX}px)`;
+// });
+
+// // touch end
+// lightboxImg.addEventListener('touchend', () => {
+//   if (!isDragging) return;
+//   isDragging = false;
+
+//   const deltaX = currentX - startX;
+
+//   lightboxImg.style.transition = 'transform 0.3s ease';
+
+//   if (Math.abs(deltaX) > swipeThreshold) {
+//     if (deltaX < 0) {
+//       // 下一张
+//       document.getElementById('lightbox-next').click();
+//     } else {
+//       // 上一张
+//       document.getElementById('lightbox-prev').click();
+//     }
+//   }
+
+//   // ⭐ 核心修复：无论切不切，都 reset
+//   requestAnimationFrame(() => {
+//     lightboxImg.style.transform = 'translateX(0)';
+//   });
+// });
+// =====================================================
 let startX = 0;
 let currentX = 0;
 let isDragging = false;
 
 const swipeThreshold = 80;
+const animDuration = 300;
 
 // touch start
 lightboxImg.addEventListener('touchstart', e => {
@@ -644,24 +698,40 @@ lightboxImg.addEventListener('touchend', () => {
   isDragging = false;
 
   const deltaX = currentX - startX;
+  const absX = Math.abs(deltaX);
 
-  lightboxImg.style.transition = 'transform 0.3s ease';
+  if (absX > swipeThreshold) {
+    const dir = deltaX < 0 ? -1 : 1;
 
-  if (Math.abs(deltaX) > swipeThreshold) {
-    if (deltaX < 0) {
-      // 下一张
-      document.getElementById('lightbox-next').click();
-    } else {
-      // 上一张
-      document.getElementById('lightbox-prev').click();
-    }
-  }
+    // ① 当前图飞走
+    lightboxImg.style.transition = `transform ${animDuration}ms ease`;
+    lightboxImg.style.transform = `translateX(${dir * 100}vw)`;
 
-  // ⭐ 核心修复：无论切不切，都 reset
-  requestAnimationFrame(() => {
+    // ② 等飞走动画结束，再切图
+    setTimeout(() => {
+      // 切 index
+      if (dir < 0) {
+        document.getElementById('lightbox-next').click();
+      } else {
+        document.getElementById('lightbox-prev').click();
+      }
+
+      // ③ 新图从另一侧进来
+      lightboxImg.style.transition = 'none';
+      lightboxImg.style.transform = `translateX(${-dir * 100}vw)`;
+
+      requestAnimationFrame(() => {
+        lightboxImg.style.transition = `transform ${animDuration}ms ease`;
+        lightboxImg.style.transform = 'translateX(0)';
+      });
+    }, animDuration);
+  } else {
+    // 弹回
+    lightboxImg.style.transition = 'transform 200ms ease';
     lightboxImg.style.transform = 'translateX(0)';
-  });
+  }
 });
+
 
 </script>
 
