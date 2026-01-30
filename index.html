@@ -482,11 +482,46 @@ images.forEach((img, index) => {
   });
 });
 
+// function showImage() {
+//   const img = images[currentIndex];
+//   lightboxImg.src = img.src;
+
+//   // 🔑 自动抓 caption
+//   const container = img.closest('div'); // 外层包住 img + p 的 div
+//   const ps = container.querySelectorAll('p');
+
+//   let captionText = '';
+//   ps.forEach(p => {
+//     captionText += p.textContent.trim() + ' ';
+//   });
+
+//   // lightboxCaption.textContent = captionText.trim();
+//   // 如果是最后一张，加上可点击 [More] 链接
+//   if (currentIndex === images.length - 1) {
+//     lightboxCaption.innerHTML = captionText.trim() + '<br><div style="text-align: center;"><a href="more.html" class="more-button">[More]</a></div>';
+//   } else {
+//     lightboxCaption.textContent = captionText.trim();
+//   }
+//   // 控制箭头显示
+//   document.getElementById('lightbox-prev').style.display = currentIndex === 0 ? 'none' : 'block';
+//   document.getElementById('lightbox-next').style.display = currentIndex === images.length - 1 ? 'none' : 'block';
+// }
 function showImage() {
+  // 如果是最后一张后的状态，只显示 More
+  if (currentIndex === images.length) {
+    lightboxImg.style.display = 'none'; // 隐藏图片
+    lightboxCaption.innerHTML = '<div style="text-align: center;"><a href="more.html" class="more-button">[More]</a></div>';
+    document.getElementById('lightbox-prev').style.display = 'block'; // 可以返回上一张
+    document.getElementById('lightbox-next').style.display = 'none'; // 右箭头隐藏
+    return;
+  }
+
+  // 显示图片
+  lightboxImg.style.display = 'block';
   const img = images[currentIndex];
   lightboxImg.src = img.src;
 
-  // 🔑 自动抓 caption
+  // 自动抓 caption
   const container = img.closest('div'); // 外层包住 img + p 的 div
   const ps = container.querySelectorAll('p');
 
@@ -495,17 +530,18 @@ function showImage() {
     captionText += p.textContent.trim() + ' ';
   });
 
-  // lightboxCaption.textContent = captionText.trim();
-  // 如果是最后一张，加上可点击 [More] 链接
+  // 如果是最后一张，加上可点击 [More] 链接（还在图片下方显示）
   if (currentIndex === images.length - 1) {
     lightboxCaption.innerHTML = captionText.trim() + '<br><div style="text-align: center;"><a href="more.html" class="more-button">[More]</a></div>';
   } else {
     lightboxCaption.textContent = captionText.trim();
   }
+
   // 控制箭头显示
   document.getElementById('lightbox-prev').style.display = currentIndex === 0 ? 'none' : 'block';
-  document.getElementById('lightbox-next').style.display = currentIndex === images.length - 1 ? 'none' : 'block';
+  document.getElementById('lightbox-next').style.display = 'block'; // 右箭头一直显示，点击最后一张后进入 More 状态
 }
+    
 
 document.getElementById('lightbox-close').onclick = () => {
   lightbox.style.display = 'none';
