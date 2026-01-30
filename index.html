@@ -517,6 +517,13 @@ lightbox.addEventListener('click', e => {
   if (e.target === lightbox) lightbox.style.display = 'none';
 });
 
+// 如果是最后一张，加上可点击 [More] 链接
+if (currentIndex === images.length - 1) {
+  lightboxCaption.innerHTML = captionText.trim() + '<br><div style="text-align: center;"><a href="more.html" class="more-button">[More]</a></div>';
+} else {
+  lightboxCaption.textContent = captionText.trim();
+}
+    
 // 键盘支持
 document.addEventListener('keydown', e => {
   if (lightbox.style.display === 'flex') {
