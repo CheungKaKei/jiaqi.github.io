@@ -57,6 +57,9 @@
         #lightbox img {
           max-width: 80vw;
           max-height: 80vh;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+          will-change: transform;
+          touch-action: pan-y;
         }
         
         #lightbox-close {
@@ -582,32 +585,86 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') lightbox.style.display = 'none';
   }
 });
-let touchStartX = 0;
-let touchEndX = 0;
+// let touchStartX = 0;
+// let touchEndX = 0;
 
-lightbox.addEventListener('touchstart', e => {
-  touchStartX = e.changedTouches[0].screenX;
+// lightbox.addEventListener('touchstart', e => {
+//   touchStartX = e.changedTouches[0].screenX;
+// });
+
+// lightbox.addEventListener('touchend', e => {
+//   touchEndX = e.changedTouches[0].screenX;
+//   handleSwipe();
+// });
+
+// function handleSwipe() {
+//   const threshold = 50; // 最小滑动距离（px）
+//   const diff = touchEndX - touchStartX;
+
+//   if (Math.abs(diff) < threshold) return;
+
+//   if (diff < 0) {
+//     // 左滑 → 下一张
+//     document.getElementById('lightbox-next').click();
+//   } else {
+//     // 右滑 → 上一张
+//     document.getElementById('lightbox-prev').click();
+//   }
+// }
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
+
+const swipeThreshold = 80; // 触发切换的最小距离（px）
+
+// 手指按下
+lightboxImg.addEventListener('touchstart', e => {
+  if (e.touches.length !== 1) return;
+
+  startX = e.touches[0].clientX;
+  currentX = startX;
+  isDragging = true;
+
+  // 拖拽时取消动画，保证跟手
+  lightboxImg.style.transition = 'none';
 });
 
-lightbox.addEventListener('touchend', e => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
+// 手指移动（跟随）
+lightboxImg.addEventListener('touchmove', e => {
+  if (!isDragging) return;
+
+  currentX = e.touches[0].clientX;
+  const deltaX = currentX - startX;
+
+  lightboxImg.style.transform = `translateX(${deltaX}px)`;
 });
 
-function handleSwipe() {
-  const threshold = 50; // 最小滑动距离（px）
-  const diff = touchEndX - touchStartX;
+// 手指松开
+lightboxImg.addEventListener('touchend', () => {
+  if (!isDragging) return;
+  isDragging = false;
 
-  if (Math.abs(diff) < threshold) return;
+  const deltaX = currentX - startX;
 
-  if (diff < 0) {
-    // 左滑 → 下一张
-    document.getElementById('lightbox-next').click();
+  // 恢复动画
+  lightboxImg.style.transition = 'transform 0.3s ease';
+
+  if (Math.abs(deltaX) > swipeThreshold) {
+    // 滑动足够 → 切图
+    if (deltaX < 0) {
+      // 左滑 → 下一张
+      document.getElementById('lightbox-next').click();
+      lightboxImg.style.transform = 'translateX(-100vw)';
+    } else {
+      // 右滑 → 上一张
+      document.getElementById('lightbox-prev').click();
+      lightboxImg.style.transform = 'translateX(100vw)';
+    }
   } else {
-    // 右滑 → 上一张
-    document.getElementById('lightbox-prev').click();
+    // 不够距离 → 弹回
+    lightboxImg.style.transform = 'translateX(0)';
   }
-}
+});
 
 </script>
 
