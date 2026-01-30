@@ -25,7 +25,12 @@
           /* font-weight: bold; */
           font-size: 13px;
         }
-        
+        .more-button-2 {
+          color: #ffffff;
+          text-decoration: none;
+          /* font-weight: bold; */
+          font-size: 13px;
+        }
         .more-button:hover {
           color: #f09228;
         }
@@ -510,7 +515,7 @@ function showImage() {
   // 如果是最后一张后的状态，只显示 More
   if (currentIndex === images.length) {
     lightboxImg.style.display = 'none'; // 隐藏图片
-    lightboxCaption.innerHTML = '<div style="text-align: center;"><a href="more.html" class="more-button">[More]</a></div>';
+    lightboxCaption.innerHTML = '<div style="text-align: center;"><a href="more.html" class="more-button-2">[More]</a></div>';
     document.getElementById('lightbox-prev').style.display = 'block'; // 可以返回上一张
     document.getElementById('lightbox-next').style.display = 'none'; // 右箭头隐藏
     return;
