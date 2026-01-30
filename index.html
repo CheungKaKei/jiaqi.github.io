@@ -32,12 +32,20 @@
 
         #lightbox {
           position: fixed;
-          z-index: 9999;
           inset: 0;
           background: rgba(0,0,0,0.85);
-          display: flex;
-          align-items: center;
+          display: none;
           justify-content: center;
+          align-items: center;
+          z-index: 9999;
+        }
+        
+        .lightbox-content {
+          display: flex;
+          flex-direction: column;   /* 👈 图在上，caption 在下 */
+          align-items: center;
+          max-width: 90vw;
+          max-height: 90vh;
         }
         
         #lightbox img {
@@ -68,7 +76,7 @@
         #lightbox-prev { left: 20px; }
         #lightbox-next { right: 20px; }
         
-        #lightbox-caption {
+        /* #lightbox-caption {
           position: absolute;
           bottom: 30px;
           max-width: 80%;
@@ -76,6 +84,16 @@
           font-size: 13px;
           text-align: center;
           line-height: 1.4;
+        } */
+        #lightbox-caption {
+          margin-top: 14px;
+          max-width: 85vw;
+          color: #e0e0e0;
+          font-size: 14px;
+          line-height: 1.6;
+          text-align: center;
+          white-space: pre-line;   /* 支持多行 */
+          opacity: 0.9;
         }
   </style>
 </head>
