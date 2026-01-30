@@ -552,9 +552,15 @@ document.getElementById('lightbox-prev').onclick = () => {
   showImage();
 };
 
+// document.getElementById('lightbox-next').onclick = () => {
+//   currentIndex = (currentIndex + 1) % images.length;
+//   showImage();
+// };
 document.getElementById('lightbox-next').onclick = () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  showImage();
+  if (currentIndex < images.length) {
+    currentIndex++;
+    showImage(); // 点击最后一张进入 More 页面
+  }
 };
 
 // 点击黑色背景关闭
