@@ -615,9 +615,9 @@ let startX = 0;
 let currentX = 0;
 let isDragging = false;
 
-const swipeThreshold = 80; // 触发切换的最小距离（px）
+const swipeThreshold = 80;
 
-// 手指按下
+// touch start
 lightboxImg.addEventListener('touchstart', e => {
   if (e.touches.length !== 1) return;
 
@@ -625,11 +625,10 @@ lightboxImg.addEventListener('touchstart', e => {
   currentX = startX;
   isDragging = true;
 
-  // 拖拽时取消动画，保证跟手
   lightboxImg.style.transition = 'none';
 });
 
-// 手指移动（跟随）
+// touch move
 lightboxImg.addEventListener('touchmove', e => {
   if (!isDragging) return;
 
@@ -639,31 +638,29 @@ lightboxImg.addEventListener('touchmove', e => {
   lightboxImg.style.transform = `translateX(${deltaX}px)`;
 });
 
-// 手指松开
+// touch end
 lightboxImg.addEventListener('touchend', () => {
   if (!isDragging) return;
   isDragging = false;
 
   const deltaX = currentX - startX;
 
-  // 恢复动画
   lightboxImg.style.transition = 'transform 0.3s ease';
 
   if (Math.abs(deltaX) > swipeThreshold) {
-    // 滑动足够 → 切图
     if (deltaX < 0) {
-      // 左滑 → 下一张
+      // 下一张
       document.getElementById('lightbox-next').click();
-      lightboxImg.style.transform = 'translateX(-100vw)';
     } else {
-      // 右滑 → 上一张
+      // 上一张
       document.getElementById('lightbox-prev').click();
-      lightboxImg.style.transform = 'translateX(100vw)';
     }
-  } else {
-    // 不够距离 → 弹回
-    lightboxImg.style.transform = 'translateX(0)';
   }
+
+  // ⭐ 核心修复：无论切不切，都 reset
+  requestAnimationFrame(() => {
+    lightboxImg.style.transform = 'translateX(0)';
+  });
 });
 
 </script>
