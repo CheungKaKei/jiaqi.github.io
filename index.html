@@ -435,7 +435,16 @@
   </tbody>
 </table>
 
-
+         
+<!-- Lightbox -->
+<div id="lightbox" style="display:none;">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img">
+  <div id="lightbox-caption"></div>
+  <span id="lightbox-prev">&#10094;</span>
+  <span id="lightbox-next">&#10095;</span>
+</div>
+          
 <script>
 const images = document.querySelectorAll('.misc-gallery');
 const lightbox = document.getElementById('lightbox');
@@ -444,7 +453,8 @@ const lightboxCaption = document.getElementById('lightbox-caption');
 let currentIndex = 0;
 
 images.forEach((img, index) => {
-  img.addEventListener('click', () => {
+  img.addEventListener('click', (e) => {
+    e.preventDefault();   // ⬅️ 关键
     currentIndex = index;
     showImage();
     lightbox.style.display = 'flex';
@@ -486,14 +496,6 @@ document.addEventListener('keydown', e => {
 });
 </script>
 
-          
-<!-- Lightbox -->
-<div id="lightbox" style="display:none;">
-  <span id="lightbox-close">&times;</span>
-  <img id="lightbox-img">
-  <span id="lightbox-prev">&#10094;</span>
-  <span id="lightbox-next">&#10095;</span>
-</div>
           
 </body>
 
