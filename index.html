@@ -9,102 +9,6 @@
     <link href="main.css" media="all" rel="stylesheet">
     <link rel="icon" type="image/png" href="figures/logo.jpg">
     <title>Jiaqi's Homepage</title>
-    <style>
-        .conf-badge {
-          display: inline-block;
-          padding: 2px 12px;
-          color: #fff;
-          font-size: 14px;
-          font-weight: 600;
-          border-radius: 4px;
-          background-color: #153265;
-        }
-        .more-button {
-          color: #000000;
-          text-decoration: none;
-          /* font-weight: bold; */
-          font-size: 13px;
-        }
-        .more-button-2 {
-          color: #ffffff;
-          text-decoration: none;
-          /* font-weight: bold; */
-          font-size: 13px;
-        }
-        .more-button:hover {
-          color: #f09228;
-        }
-
-        #lightbox {
-          position: fixed;
-          inset: 0;
-          background: rgba(0,0,0,0.85);
-          display: none;
-          justify-content: center;
-          align-items: center;
-          z-index: 9999;
-          touch-action: pan-y;
-        }
-        
-        .lightbox-content {
-          display: flex;
-          flex-direction: column;   /* 👈 图在上，caption 在下 */
-          align-items: center;
-          /* max-width: 90vw;
-          max-height: 90vh; */
-        }
-        
-        #lightbox img {
-          max-width: 80vw;
-          max-height: 80vh;
-          transition: transform 0.3s ease, opacity 0.3s ease;
-          will-change: transform;
-          touch-action: pan-y;
-        }
-        
-        #lightbox-close {
-          position: absolute;
-          top: 20px;
-          right: 30px;
-          font-size: 30px;
-          color: #fff;
-          cursor: pointer;
-        }
-        
-        #lightbox-prev,
-        #lightbox-next {
-          position: absolute;
-          top: 50%;
-          font-size: 40px;
-          color: #fff;
-          cursor: pointer;
-          user-select: none;
-          padding: 10px;
-        }
-        
-        #lightbox-prev { left: 20px; }
-        #lightbox-next { right: 20px; }
-        
-        /* #lightbox-caption {
-          position: absolute;
-          bottom: 30px;
-          max-width: 80%;
-          color: #ccc;
-          font-size: 13px;
-          text-align: center;
-          line-height: 1.4;
-        } */
-        #lightbox-caption {
-          margin-top: 14px;
-          max-width: 85vw;
-          color: #e0e0e0;
-          font-size: 14px;
-          line-height: 1.6;
-          text-align: center;
-          white-space: pre-line;   /* 支持多行 */
-          opacity: 0.9;
-        }
-  </style>
 </head>
 
 <body>
@@ -116,7 +20,7 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
             <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <h2 style="text-align: center;">Jiaqi Zhang (张家祺)</h2>
+              <h2 style="text-align: center;">Jiaqi Zhang (<span class="zh-name">张家祺</span>)</h2>
               <p> Jiaqi (Jacky) Zhang is a 1st-year PhD student at The University of Queensland (UQ), under the supervision of Prof. <a href="https://sites.google.com/view/hongzhi-yin/home">Hongzhi Yin</a> and Prof. <a href="https://junliang-yu.github.io/">Junliang Yu</a>. 
                   His research interest lies in <strong>Large Language Models, Personalization, Recommender Systems, LLM Reasoning, and LLM Agent</strong>.
                   He did a research internship at Tsinghua University, working under the guidance of Prof. <a href="http://web.ee.tsinghua.edu.cn/liyong/zh_CN/index.htm">Yong Li</a> and Prof. <a href="https://fi.ee.tsinghua.edu.cn/~gaochen/">Chen Gao</a>.
@@ -126,11 +30,10 @@
                 Prior to this, he received his M.S. degree from City University of Hong Kong (<a class="a1" href="https://www.cityu.edu.hk/">CityU</a>) and 
                 B.E. degree from Taiyuan University of Technology (<a class="a1" href="https://www.tyut.edu.cn/">TYUT</a>). 
               </p>
-              <p style="text-align:center">
+              <p class="social-links" style="text-align:center">
                 <a href="mailto:jqzhang927@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/jiaqi-zhang-3ab32437b/">Linkedin</a> &nbsp/&nbsp
-                <a href="https://orcid.org/0009-0003-8317-2229">ORCID</a> &nbsp/&nbsp
-                <a href="https://github.com/CheungKaKei">Github</a> &nbsp/&nbsp
+                <a href="https://www.linkedin.com/in/jiaqi-zhang-3ab32437b/">LinkedIn</a> &nbsp/&nbsp
+                <a href="https://github.com/CheungKaKei">GitHub</a> &nbsp/&nbsp
                 <a href="https://scholar.google.com/citations?hl=zh-CN&user=6SjLgqQAAAAJ">Google Scholar</a>
               </p>
             </td>
@@ -147,7 +50,7 @@
         <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"> -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tbody><tr> 
-            <td style="padding:20px;width:100%;vertical-align:middle">
+            <td class="section-cell" style="padding:20px;width:100%;vertical-align:middle">
               <h2>Education</h2>
               <table>
                 <tbody>
@@ -215,7 +118,7 @@
 <!-------------------------- Selected Publications----------------->
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr>
-      <td style="padding:20px;width:100%;vertical-align:middle">
+      <td class="section-cell" style="padding:20px;width:100%;vertical-align:middle">
     <h2>Selected Publications (<a href="https://scholar.google.com/citations?hl=zh-CN&user=6SjLgqQAAAAJ">Full Publications</a>)</h2> 
 
     <table id="tbPublications" width="100%"><tr>
@@ -230,10 +133,11 @@
             <strong>NineRec: A Benchmark Dataset Suite for Evaluating Transferable Recommendation</strong>
           </a>
           <br>
-          <strong>Jiaqi Zhang</strong>, Yu Cheng, Yongxin Ni, Yunzhu Pan, Zheng Yuan, Junchen Fu, Youhua Li, Jie Wang, Fajie Yuan
-          <br>
+          <span class="compact-authors"><strong>Jiaqi Zhang</strong>, Yu Cheng, Yongxin Ni, Yunzhu Pan, Zheng Yuan, Junchen Fu, Youhua Li, Jie Wang, Fajie Yuan</span>
+          <!-- <br> -->
           <em> IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI</strong>)</em>, 2025
-          [<a href="https://ieeexplore.ieee.org/document/10461053">Paper</a>]
+          [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10461053">Paper</a>]
+          [<a href="https://github.com/westlake-repl/NineRec">Code</a>]
         </td>
     </tr></table>
 
@@ -243,14 +147,15 @@
         </td>
         <td width="84%" style="padding:10px; vertical-align: top;">
           <span class="conf-badge kdd">AAAI</span>
-          <a href="https://arxiv.org/pdf/2412.07472.pdf">
+          <a href="https://ojs.aaai.org/index.php/AAAI/article/view/38859">
             <strong>SmartAgent: Chain-of-User Thought for Embodied Personalized Agent in Cyber World</strong>
           </a>
           <br>
-          <strong>Jiaqi Zhang</strong>, Chen Gao, Liyuan Zhang, Quoc Viet Hung Nguyen, Hongzhi Yin
-          <br>
-          <em> In 40th Annual AAAI Conference on Artificial Intelligence (<strong>AAAI</strong>)</em>, 2026
-          [<a href="https://arxiv.org/pdf/2412.07472.pdf">Paper</a>]
+          <span class="compact-authors"><strong>Jiaqi Zhang</strong>, Chen Gao, Liyuan Zhang, Quoc Viet Hung Nguyen, Hongzhi Yin</span>
+          <!-- <br> -->
+          <em> 40th Annual AAAI Conference on Artificial Intelligence (<strong>AAAI</strong>)</em>, 2026
+          [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/38859">Paper</a>]
+          [<a href="https://github.com/tsinghua-fib-lab/SmartAgent">Code</a>]
         </td>
     </tr></table>
 
@@ -265,25 +170,47 @@
             <strong>Towards Reasoning-Aware Recommender Systems: A Survey in the LLM Era</strong>
           </a>
           <br>
-          <strong>Jiaqi Zhang</strong>,  Junliang Yu, Zongwei Wang, Wei Yuan, Tong Chen, Quoc Viet Hung Nguyen, Bin Cui, Hongzhi Yin 
-          <br>
-          <em> <strong>Preprint</strong></em>, 2025
+          <span class="compact-authors"><strong>Jiaqi Zhang</strong>, Junliang Yu, Zongwei Wang, Wei Yuan, Tong Chen, Quoc Viet Hung Nguyen, Bin Cui, Hongzhi Yin</span>
+          <!-- <br> -->
+          <em><strong>Preprint</strong></em>, 2025
           [<a href="https://www.researchgate.net/publication/397223831_Towards_Reasoning-Aware_Recommender_Systems_A_Survey_in_the_LLM_Era">Paper</a>]
         </td>
     </tr></table>
+
+    <table id="tbPublications" width="100%"><tr>
+        <td width="16%" style="padding:10px; vertical-align: top;">
+          <div style="width:100%; max-width:260px; aspect-ratio:3.5/2; overflow:hidden; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+            <img src="figures/rec_survey.png" class="espo-preview" alt="paper image" style="width:100%; height:100%; object-fit: cover;">
+          </div>
+        <td width="84%" style="padding:10px; vertical-align: top;">
+          <span class="conf-badge">TOIS</span>
+          <a href="https://arxiv.org/pdf/2503.05659.pdf">
+            <strong>A survey of large language model empowered agents for recommendation and search: Towards next-generation information retrieval</strong>
+          </a>
+          <br>
+          <span class="compact-authors">Yu Zhang, Shutong Qiao, <strong>Jiaqi Zhang</strong>, Tzu-Heng Lin, Chen Gao, Yong Li </span>
+          <!-- <br> -->
+          <em>ACM Transactions on Information Systems (<strong>TOIS</strong>)</em>, 2026
+          [<a href="https://arxiv.org/pdf/2503.05659.pdf">Paper</a>]
+        </td>
+    </tr></table>
+          
+        </td>
+      </tr>
+    </tbody></table>
           
 <!-------------------------- Research Experiences----------------->
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr>
-        <td style="padding:20px;width:100%;vertical-align:middle">
+        <td class="section-cell" style="padding:20px;width:100%;vertical-align:middle">
           <h2>Research Experiences</h2>
           <table>
             <tbody>
               <tr>
-                <td width="16%">
+                <td width="14%">
                   <img src="figures/thu_logo.png" width="100%" style="display: block; margin: auto;">
                 </td>
-                <td width="84%"><br>
+                <td width="84%" style="vertical-align: top;">
                   <div style="display: flex; justify-content: space-between; align-items: baseline; margin-left: 1.2em;">
                     <strong>Research Intern (Advisor: Prof. <a href="http://web.ee.tsinghua.edu.cn/liyong/zh_CN/index.htm">Yong Li</a> and Prof. <a href="https://fi.ee.tsinghua.edu.cn/~gaochen/">Chen Gao</a>)</strong>
                     <span style="white-space: nowrap;">Jun. 2024 - Jan. 2025</span>
@@ -298,16 +225,16 @@
               </tr>
                 
               <tr>
-                <td width="16%">
+                <td width="14%">
                   <img src="figures/polyu_logo.png" width="100%" style="display: block; margin: auto;">
                 </td>
-                <td width="84%"><br>
+                <td width="84%" style="vertical-align: top;">
                   <div style="display: flex; justify-content: space-between; align-items: baseline; margin-left: 1.2em;">
                     <strong>Remote Research Intern (Advisor: Prof. <a href="https://www.polyu.edu.hk/dsai/people/academic-staff/tankaychen/">TAN Kay Chen</a> and Prof. <a href="https://huangza.wixsite.com/mysite">Zhi-An Huang</a>)</strong>
                     <span style="white-space: nowrap;">Nov. 2023 - Feb. 2024</span>
                   </div>
                   <div style="margin-left: 1.2em;">
-                    The Hong Kong Polytechnic University (PolyU), Hong Kong SAR, China
+                    The Hong Kong Polytechnic University, Hong Kong SAR, China
                   </div>
                   <div style="margin-left: 1.2em;">
                     <p style="font-size: 0.9em;">- Work on LLM application in Bioinformatics and Medical Image. Find Prof. TAN and Prof. Huang team's remarkable work on AI healthcare and Evolutionary Computation <a href="https://www.mindlab-ai.com/">here</a>.</p>
@@ -316,16 +243,16 @@
               </tr>
                 
               <tr>
-                <td width="16%">
+                <td width="14%">
                   <img src="figures/westlake_logo.png" width="100%" style="display: block; margin: auto;">
                 </td>
-                <td width="84%"><br>
+                <td width="84%" style="vertical-align: top;">
                   <div style="display: flex; justify-content: space-between; align-items: baseline; margin-left: 1.2em;">
                     <strong>Research Assistant (Advisor: Prof. <a href="https://fajieyuan.github.io/">Fajie Yuan</a>)</strong>
                     <span style="white-space: nowrap;">Mar. 2022 - Aug. 2023</span>
                   </div>
                   <div style="margin-left: 1.2em;">
-                    Westlake University, Hangzhou, Zhejiang, China
+                    Westlake University, Hangzhou, China
                   </div>
                   <div style="margin-left: 1.2em;">
                     <p style="font-size: 0.9em;">- Work on Modal-based Recommender Systems. Find Prof. Yuan and his brilliant team's research on AI foundation models, AI4biology, and Recommender Systems <a href="https://github.com/westlake-repl">here</a>.</p>
@@ -341,7 +268,7 @@
 <!-------------------------- Professional Services----------------->
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
-        <td style="padding:20px;width:100%;vertical-align:middle">
+        <td class="section-cell" style="padding:20px;width:100%;vertical-align:middle">
           <h2>Professional Services</h2>
           <ul>
             <li><strong>Conference Area Chair</strong>
@@ -351,9 +278,10 @@
             </li>
             <li><strong>Conference Reviewer/PC Member</strong>
               <div style="font-size: 0.9em; line-height: 0.8em; margin-top: 0.2em;">
+              <p style="font-size: 0.9em;">ACM International Conference on Knowledge Discovery and Data Mining (<strong>KDD</strong>), 2025-2027</p>
+              <p style="font-size: 0.9em;">The AAAI International Conference on Artificial Intelligence (<strong>AAAI</strong>), 2026-2027</p>
               <p style="font-size: 0.9em;">ACM International Conference on Multimedia (<strong>ACM MM</strong>), 2023-2026</p>
-              <p style="font-size: 0.9em;">ACM International Conference on Knowledge Discovery and Data Mining (<strong>KDD</strong>), 2025-2026</p>
-              <p style="font-size: 0.9em;">The AAAI International Conference on Artificial Intelligence (<strong>AAAI</strong>), 2026</p>
+              <p style="font-size: 0.9em;">ACM Recommender Systems Conference (<strong>RecSys</strong>), 2026</p>
               <p style="font-size: 0.9em;">International Conference on Learning Representations (<strong>ICLR</strong>), 2025</p>
               <p style="font-size: 0.9em;">ACM International World Wide Web Conference (<strong>WWW</strong>), 2025</p>
               <p style="font-size: 0.9em;">IEEE International Joint Conference on Neural Networks (<strong>IJCNN</strong>), 2025</p>
@@ -376,13 +304,13 @@
 <!-------------------------- Honors & Awards----------------->
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
-        <td style="padding:20px;width:100%;vertical-align:middle">
+        <td class="section-cell" style="padding:20px;width:100%;vertical-align:middle">
           <h2>Honors & Awards</h2>
           <ul>
               <div style="font-size: 0.9em; line-height: 1.2em; margin-top: 0.2em;">
               <li><strong>Research Higher Degree Scholarship</strong>, The University of Queensland, 2025-2029
               <li><strong>HDR Travel Support Grant</strong>, The University of Queensland, 2026
-              <li><strong>Outstanding Students Scholarship (Academics)</strong>, Taiyuan University of Technology, 2017-2018
+              <li><strong>Outstanding Student Scholarship (Academics)</strong>, Taiyuan University of Technology, 2017-2018
               </div>
           </ul>
         </td>
@@ -394,7 +322,7 @@
     <table style="width:100%; border:0; border-spacing:0; margin:0 auto;">
       <tbody>
         <tr>
-          <td style="padding:20px; width:100%; vertical-align:middle">
+          <td class="section-cell" style="padding:20px; width:100%; vertical-align:middle">
             <h2>Miscellaneous</h2>
             <p>
               Behind every line of research lies a lived journey. 
@@ -403,32 +331,34 @@
             </p>
             <div style="display:flex; justify-content:space-between; gap:2%; max-width:1000px; margin:0 auto;">
               <div style="width:32%; vertical-align: top; padding:0;">
-                <a href="figures/westlake_misc.JPG">
-                  <img src="figures/westlake_misc.JPG" class="misc-gallery" alt="profile photo" style="width:100%; display:block;">
+                <a href="figures/wu.JPG">
+                  <img src="figures/wu.JPG" class="misc-gallery" alt="profile photo" data-caption="I was fortunate to collaborate with a group of brilliant people here. We shared a stirring, yet memorable period. Now scattered across the world, we continue on our new paths. Best wishes to Yuanshen, Xinshen, The Principal, Shuji, Shaoge, Yushen, Jieshen, and many others. (Walk to grab dinner, Westlake University, Jul. 2023)" style="width:100%; display:block;">
                 </a>
-                <p style="font-size:10px; color:#555; text-align:center; margin:4px 0 0 0;">
-                  I was fortunate to collaborate with a group of brilliant people here. We shared a stirring, yet memorable period. 
-                  Now scattered across the world, we continue on our new paths. 
-                  Best wishes to Yuanshen, Xinshen, The Principal, Shuji, Shaoge, Yushen, Jieshen, and many others.
-                </p>
+                <div class="collapsible-wrap">
+                  <p id="westlake-description" class="collapsible-text">
+                    <span class="short-text">A memorable period with brilliant people...</span>
+                    <span class="full-text">I was fortunate to collaborate with a group of brilliant people here. We shared a stirring, yet memorable period. Now scattered across the world, we continue on our new paths. Best wishes to Yuanshen, Xinshen, The Principal, Shuji, Shaoge, Yushen, Jieshen, and many others.</span>
+                  </p>
+                  <button type="button" class="text-toggle" aria-expanded="false" aria-controls="westlake-description">[More]</button>
+                </div>
                 <p style="font-size:10px; color:#555; text-align:center; margin:4px 0 0 0;">
                   (Walk to grab dinner, Westlake University, Jul. 2023)
                 </p>
               </div>    
               <div style="width:32%; vertical-align: top; padding:0;">
-                <a href="figures/thu_misc.JPG">
-                  <img src="figures/thu_misc.JPG" class="misc-gallery" alt="profile photo" style="width:100%; display:block;">
+                <a href="figures/thu.JPG">
+                  <img src="figures/thu.JPG" class="misc-gallery" alt="profile photo" style="width:100%; display:block;">
                 </a>
                 <p style="font-size:10px; color:#555; text-align:center; margin:4px 0 0 0;">
-                  (Walking past the grand auditorium at THU, Beijing, Jun. 2024)
+                  (A walk through Tsinghua Garden, Beijing, Jun. 2024)
                 </p>
               </div>
               <div style="width:32%; vertical-align: top;padding:0;">
-                <a href="figures/qld_misc.png">
-                  <img src="figures/qld_misc.png" class="misc-gallery" alt="profile photo" style="width:100%; display:block;">
+                <a href="figures/qld.png">
+                  <img src="figures/qld.png" class="misc-gallery" alt="profile photo" style="width:100%; display:block;">
                 </a>
                 <p style="font-size:10px; color:#555; text-align:center; margin:4px 0 0 0;">
-                  (Tyto alba in Lone Pine Koala Sanctuary, QLD, Sep. 2025)
+                  (Visiting Lone Pine Koala Sanctuary, Brisbane, Sep. 2025)
                 </p>
               </div>
             </div>
@@ -441,28 +371,6 @@
 </div>
 <div style="margin-bottom:20px;"></div>
 
-          
-<!----------------- Acknowledgements + Stats -------------------->
-<table style="width:100%; border:0; border-spacing:0; margin:auto;">
-  <tbody>
-    <tr>
-      <td style="text-align:center">
-        <hr>
-        <br>
-        <div style="width:35%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=X7ZJt9ytOvyfr9dvpehqXXO3BKcKYEmQcm9MGgqVYFU&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
-        </div>
-        <p style="font-size:0.6em; text-align:center; line-height:1.6;">
-          Template stolen from <a href="https://jonbarron.info/">Jon Barron</a>. Last update: Jan. 2026
-          <br>
-          © 2026 Jiaqi Zhang
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-         
 <!-- Lightbox -->
 <div id="lightbox" style="display:none;">
   <span id="lightbox-close">&times;</span>
@@ -476,13 +384,48 @@
 </div>
           
 <script>
-const images = document.querySelectorAll('.misc-gallery');
+const textToggle = document.querySelector('.text-toggle');
+const collapsibleWrap = document.querySelector('.collapsible-wrap');
+
+textToggle.addEventListener('click', () => {
+  const isExpanded = collapsibleWrap.classList.toggle('expanded');
+  textToggle.setAttribute('aria-expanded', isExpanded);
+  textToggle.textContent = isExpanded ? '[Less]' : '[More]';
+});
+
+const previewImages = document.querySelectorAll('.misc-gallery');
+const galleryItems = [
+  ...Array.from(previewImages, img => {
+    const container = img.closest('div');
+    const caption = img.dataset.caption || Array.from(container.querySelectorAll('p'))
+      .map(p => p.textContent.trim())
+      .join(' ');
+
+    return { src: img.src, caption };
+  }),
+  {
+    src: 'figures/cy.png',
+    caption: '(Attending AAAI-26 in Singapore, Jan. 2026)'
+  },
+  {
+    src: 'figures/gc.png',
+    caption: 'Breezing, friends, shore walk, and Kung Fu networking with teens. (Miami Beach, Cold Coast, Apr. 2026)'
+  },
+  {
+    src: 'figures/78_2.png',
+    caption: 'Tremendous Rainbow. (St.lucia, QLD, Jun. 2026)'
+  },
+  {
+    src: 'figures/wellington.png',
+    caption: 'Weekend Escape. (Wellington Point, QLD, Oct. 2025)'
+  }
+];
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxCaption = document.getElementById('lightbox-caption');
 let currentIndex = 0;
 
-images.forEach((img, index) => {
+previewImages.forEach((img, index) => {
   img.addEventListener('click', (e) => {
     e.preventDefault();   // ⬅️ 关键
     currentIndex = index;
@@ -517,7 +460,7 @@ images.forEach((img, index) => {
 // }
 function showImage() {
   // 如果是最后一张后的状态，只显示 More
-  if (currentIndex === images.length) {
+  if (currentIndex === galleryItems.length) {
     lightboxImg.style.display = 'none'; // 隐藏图片
     lightboxCaption.innerHTML = '<div style="text-align: center;"><a href="more.html" class="more-button-2">[More]</a></div>';
     document.getElementById('lightbox-prev').style.display = 'block'; // 可以返回上一张
@@ -527,20 +470,12 @@ function showImage() {
 
   // 显示图片
   lightboxImg.style.display = 'block';
-  const img = images[currentIndex];
-  lightboxImg.src = img.src;
-
-  // 自动抓 caption
-  const container = img.closest('div'); // 外层包住 img + p 的 div
-  const ps = container.querySelectorAll('p');
-
-  let captionText = '';
-  ps.forEach(p => {
-    captionText += p.textContent.trim() + ' ';
-  });
+  const item = galleryItems[currentIndex];
+  lightboxImg.src = item.src;
+  const captionText = item.caption;
 
   // 如果是最后一张，加上可点击 [More] 链接（还在图片下方显示）
-  if (currentIndex === images.length - 1) {
+  if (currentIndex === galleryItems.length - 1) {
     lightboxCaption.innerHTML = captionText.trim() + '<br><div style="text-align: center;"><a href="more.html" class="more-button">[More]</a></div>';
   } else {
     lightboxCaption.textContent = captionText.trim();
@@ -557,7 +492,7 @@ document.getElementById('lightbox-close').onclick = () => {
 };
 
 document.getElementById('lightbox-prev').onclick = () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
   showImage();
 };
 
@@ -566,7 +501,7 @@ document.getElementById('lightbox-prev').onclick = () => {
 //   showImage();
 // };
 document.getElementById('lightbox-next').onclick = () => {
-  if (currentIndex < images.length) {
+  if (currentIndex < galleryItems.length) {
     currentIndex++;
     showImage(); // 点击最后一张进入 More 页面
   }
@@ -585,153 +520,8 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') lightbox.style.display = 'none';
   }
 });
-// let touchStartX = 0;
-// let touchEndX = 0;
 
-// lightbox.addEventListener('touchstart', e => {
-//   touchStartX = e.changedTouches[0].screenX;
-// });
 
-// lightbox.addEventListener('touchend', e => {
-//   touchEndX = e.changedTouches[0].screenX;
-//   handleSwipe();
-// });
-
-// function handleSwipe() {
-//   const threshold = 50; // 最小滑动距离（px）
-//   const diff = touchEndX - touchStartX;
-
-//   if (Math.abs(diff) < threshold) return;
-
-//   if (diff < 0) {
-//     // 左滑 → 下一张
-//     document.getElementById('lightbox-next').click();
-//   } else {
-//     // 右滑 → 上一张
-//     document.getElementById('lightbox-prev').click();
-//   }
-// }
-// =================================================
-// let startX = 0;
-// let currentX = 0;
-// let isDragging = false;
-
-// const swipeThreshold = 80;
-
-// // touch start
-// lightboxImg.addEventListener('touchstart', e => {
-//   if (e.touches.length !== 1) return;
-
-//   startX = e.touches[0].clientX;
-//   currentX = startX;
-//   isDragging = true;
-
-//   lightboxImg.style.transition = 'none';
-// });
-
-// // touch move
-// lightboxImg.addEventListener('touchmove', e => {
-//   if (!isDragging) return;
-
-//   currentX = e.touches[0].clientX;
-//   const deltaX = currentX - startX;
-
-//   lightboxImg.style.transform = `translateX(${deltaX}px)`;
-// });
-
-// // touch end
-// lightboxImg.addEventListener('touchend', () => {
-//   if (!isDragging) return;
-//   isDragging = false;
-
-//   const deltaX = currentX - startX;
-
-//   lightboxImg.style.transition = 'transform 0.3s ease';
-
-//   if (Math.abs(deltaX) > swipeThreshold) {
-//     if (deltaX < 0) {
-//       // 下一张
-//       document.getElementById('lightbox-next').click();
-//     } else {
-//       // 上一张
-//       document.getElementById('lightbox-prev').click();
-//     }
-//   }
-
-//   // ⭐ 核心修复：无论切不切，都 reset
-//   requestAnimationFrame(() => {
-//     lightboxImg.style.transform = 'translateX(0)';
-//   });
-// });
-// =====================================================
-// let startX = 0;
-// let currentX = 0;
-// let isDragging = false;
-
-// const swipeThreshold = 80;
-// const animDuration = 300;
-
-// // touch start
-// lightboxImg.addEventListener('touchstart', e => {
-//   if (e.touches.length !== 1) return;
-
-//   startX = e.touches[0].clientX;
-//   currentX = startX;
-//   isDragging = true;
-
-//   lightboxImg.style.transition = 'none';
-// });
-
-// // touch move
-// lightboxImg.addEventListener('touchmove', e => {
-//   if (!isDragging) return;
-
-//   currentX = e.touches[0].clientX;
-//   const deltaX = currentX - startX;
-
-//   lightboxImg.style.transform = `translateX(${deltaX}px)`;
-// });
-
-// // touch end
-// lightboxImg.addEventListener('touchend', () => {
-//   if (!isDragging) return;
-//   isDragging = false;
-
-//   const deltaX = currentX - startX;
-//   const absX = Math.abs(deltaX);
-
-//   if (absX > swipeThreshold) {
-//     const dir = deltaX < 0 ? -1 : 1;
-
-//     // ① 当前图飞走
-//     lightboxImg.style.transition = `transform ${animDuration}ms ease`;
-//     lightboxImg.style.transform = `translateX(${dir * 100}vw)`;
-
-//     // ② 等飞走动画结束，再切图
-//     setTimeout(() => {
-//       // 切 index
-//       if (dir < 0) {
-//         document.getElementById('lightbox-next').click();
-//       } else {
-//         document.getElementById('lightbox-prev').click();
-//       }
-
-//       // ③ 新图从另一侧进来
-//       lightboxImg.style.transition = 'none';
-//       lightboxImg.style.transform = `translateX(${-dir * 100}vw)`;
-
-//       requestAnimationFrame(() => {
-//         lightboxImg.style.transition = `transform ${animDuration}ms ease`;
-//         lightboxImg.style.transform = 'translateX(0)';
-//       });
-//     }, animDuration);
-//   } else {
-//     // 弹回
-//     lightboxImg.style.transition = 'transform 200ms ease';
-//     lightboxImg.style.transform = 'translateX(0)';
-//   }
-// });
-// ================================================
 let startX = 0;
 let currentX = 0;
 let isDragging = false;
@@ -794,6 +584,26 @@ lightboxImg.addEventListener('touchend', () => {
 });
 
 </script>
+
+<!----------------- Acknowledgements + Stats -------------------->
+<table style="width:100%; border:0; border-spacing:0; margin:auto;">
+  <tbody>
+    <tr>
+      <td style="text-align:center">
+        <hr>
+        <br>
+        <div style="width:35%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <script type="text/javascript" id="clustrmaps" src="https://cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=X7ZJt9ytOvyfr9dvpehqXXO3BKcKYEmQcm9MGgqVYFU&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080"></script>
+        </div>
+        <p style="font-size:0.6em; text-align:center; line-height:1.6;">
+          Template stolen from <a href="https://jonbarron.info/">Jon Barron</a>. Last update: Jan. 2026
+          <br>
+          © 2026 Jiaqi Zhang
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
           
 </body>
