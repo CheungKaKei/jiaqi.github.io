@@ -93,6 +93,59 @@ h1, h2, h3, h4 {
   margin-top: 0;
 }
 
+.education-table {
+  --education-logo-height: 48px;
+  --education-row-gap: 8px;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+}
+
+.education-table td {
+  padding: 0 0 var(--education-row-gap);
+  vertical-align: middle;
+}
+
+.education-table tr:last-child > td {
+  padding-bottom: 0;
+}
+
+.education-table img {
+  display: block;
+  width: 100%;
+  height: var(--education-logo-height);
+  object-fit: contain;
+  object-position: left center;
+}
+
+.research-experiences {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.research-logo-column {
+  width: 14%;
+}
+
+.research-date-column {
+  width: 12em;
+}
+
+.research-date {
+  padding-left: 1em;
+  vertical-align: top;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.misc-intro {
+  font-size: 0.9em;
+}
+
+.research-experiences p {
+  margin-top: 7px;
+}
+
 .zh-name {
   font-family: 'Merriweather', SimSun, 'Songti SC', serif;
   font-size: 23px;
